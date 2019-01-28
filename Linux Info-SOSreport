@@ -2,6 +2,18 @@ https://kerneltalks.com/tools/xsos-a-tool-to-read-sosreport/
 https://kerneltalks.com/tools/all-you-need-to-know-about-sosreport/
 https://access.redhat.com/discussions/469323
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+To configure access to the yum repo and install xsos + rsar:
+
+Use the which command to find and remove any manually-installed versions of xsos or rsar along with any existing bash_completion files (might be necessary to run the following as normal AND root user)
+
+rm $(which xsos) $(which rsar) /etc/bash_completion.d/{xsos,rsar}-bash-completion.bash
+As root, run the following:
+
+yum install http://people.redhat.com/rsawhill/rpms/latest-rsawaroha-release.rpm
+yum install xsos rsar
+
+
 ###################################################
 
 xsos -- a tool for sysadmins and support techs
